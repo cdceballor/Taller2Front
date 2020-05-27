@@ -1,0 +1,23 @@
+{% extends 'temperature/index.html' %}
+{% block content %}
+<div class="container">
+    <form method="get">
+        <input type="number" name="value">
+        <input type="number" name="longi">
+        <input type="number" name="lati">
+        <input type="text" name="tipTerr">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    {% for temperature in temperatures %}
+    <ul class="list-group">
+        <li class="list-group-item">tipo = {{temperature.type}}</li>
+        <li class="list-group-item">temperatura = {{temperature.value}}</li>
+        <li class="list-group-item">longitud = {{temperature.longi}}</li>
+        <li class="list-group-item">latitud = {{temperature.lati}}</li>
+        <li class="list-group-item">Tipo de tierra = {{temperature.tipTerr}}</li>
+
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
