@@ -2,13 +2,11 @@ from django.shortcuts import render, HttpResponse
 import requests
 
 def temperature(request):
-    # Verifica si hay un parámetro value en la petición GET
     if 'value' in request.GET:
         value = request.GET['value']
         longi = request.GET['longi']
         lati = request.GET['lati']
         tipTerr = request.GET['tipTerr']
-        # Verifica si el value no esta vacio
         if value:
             # Crea el json para realizar la petición POST al Web Service
             args = {'value': value, 'lati': lati, 'longi':longi, 'tipTerr': tipTerr, 'type': 'temperature'}
